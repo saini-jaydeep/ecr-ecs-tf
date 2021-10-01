@@ -35,4 +35,5 @@ How it solves the problem:
 2. Through the ECS code, we are spinning up 14 resources which includes ecs service, ecs task-definition, ecs scheduled task, security groups, iam roles etc.
 3. For security and considering the datasources might be at different subnet,vpcs or account. We are supplying values in tfvars for cidr_blocks as a type of list so that we can whitelist IP ranges of datasources in security group (We are using dynamic ingress block in sg)
 4. For any datasource that requires specific connection, we just have to pass it in tfvars under ingress_ports and it whitelists the cidr range for that port.
+5. for upgrading it as required, added a data block which will get the latest image from repository and update the cluster when deployment is triggered.
 
