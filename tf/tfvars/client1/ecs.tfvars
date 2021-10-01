@@ -1,0 +1,11 @@
+region               = "ap-south-1"
+aws_region           = "ap-south-1"
+cluser_name          = "trustlogix-cluster"
+log_group_name       = "trustlogix-log"
+service_name         = "trustlogix-svc"
+network_mode         = "awsvpc"
+cpu                  = 512
+memory               = 1024
+schedule_expression  = "rate(5 minutes)"
+cidr_blocks          = ["10.1.0.0/16","10.2.0.0/16"]
+ingress_ports        = [5432, 5439]
